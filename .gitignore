@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/cSharpGold/v15/Server/sqlite3
+/cSharpGold/obj/Debug/netcoreapp2.1
+/cSharpGold/obj
