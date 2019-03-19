@@ -13,7 +13,7 @@ namespace cSharpGold
         /// <summary>
         /// Total tally of Gold
         /// </summary>
-        public decimal TotalScore { get; set; }
+        public decimal TotalScore { get; private set; }
         #endregion
 
         #region Methods

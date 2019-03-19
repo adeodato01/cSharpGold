@@ -17,7 +17,7 @@ namespace cSharpGold
         /// <summary>
         /// Amount of Gold to be given / taken away
         /// </summary>
-        public decimal Gold { get; set; }
+        public decimal Gold { get; private set; }
         #endregion
 
         #region Methods
