@@ -17,7 +17,11 @@ namespace cSharpGold
         /// <summary>
         /// Amount of Gold to be given / taken away
         /// </summary>
-        public decimal Gold { get; private set; }
+        public int Gold { get; private set; }
+
+        public int LowAmount { get; set; }
+
+        public int HighAmount { get; set; }
         #endregion
 
         #region Methods
@@ -27,8 +31,26 @@ namespace cSharpGold
         public void GoldAmount()
         {
             /// calculations to determine how much gold given / taken away
+            //LowAmount = lowAmount;
+            //HighAmount = highAmount;
+
+            Random random = new Random();
+            
+            Console.WriteLine($"The low is {LowAmount}");
+            Console.WriteLine($"The high is {HighAmount}");
+
+            Gold = random.Next(LowAmount, HighAmount++);
+
+            Console.WriteLine($"The amount of gold SHOULD be {Gold}");
+            //return goldAmount;
         }
-        
+        #endregion
+
+        #region Constructor
+        public Location()
+        {
+            //GoldAmount();
+        }
         #endregion
     }
 }
