@@ -4,6 +4,16 @@ using System.Text;
 
 namespace cSharpGold
 {
+
+    enum LocationType
+    {
+        Cave = 1,
+        House,
+        Farm,
+        Casino
+    }
+
+
     /// <summary>
     /// Place where various amounts of Gold are given / taken away
     /// </summary>
@@ -13,22 +23,22 @@ namespace cSharpGold
         /// <summary>
         /// Name of the Location
         /// </summary>
-        public string LocationName { get; set; }
+        public LocationType LocationName { get; set; }
         /// <summary>
         /// Amount of Gold to be given / taken away
         /// </summary>
         public int Gold { get; private set; }
 
-        public int LowAmount { get; set; }
+        public int LowAmount { get; private set; }
 
-        public int HighAmount { get; set; }
+        public int HighAmount { get; private set; }
         #endregion
 
         #region Methods
         /// <summary>
         /// Calculations for the amount of Gold to be given / taken away
         /// </summary>
-        public void GoldAmount()
+        public int GoldAmount()
         {
             /// calculations to determine how much gold given / taken away
             //LowAmount = lowAmount;
@@ -36,13 +46,39 @@ namespace cSharpGold
 
             Random random = new Random();
             
-            Console.WriteLine($"The low is {LowAmount}");
-            Console.WriteLine($"The high is {HighAmount}");
+            //Console.WriteLine($"The low is {LowAmount}");
+            //Console.WriteLine($"The high is {HighAmount}");
 
             Gold = random.Next(LowAmount, HighAmount++);
 
-            Console.WriteLine($"The amount of gold SHOULD be {Gold}");
+            //Console.WriteLine($"The amount of gold SHOULD be {Gold}");
             //return goldAmount;
+
+            return Gold;
+        }
+
+        public void HighLow(LocationType locationName)
+        {
+            if (locationName == LocationType.Cave)
+            {
+                LowAmount = 0;
+                HighAmount = 15;
+            }
+            if (locationName == LocationType.House)
+            {
+                LowAmount = 2;
+                HighAmount = 5;
+            }
+            if (locationName == LocationType.Farm)
+            {
+                LowAmount = 3;
+                HighAmount = 10;
+            }
+            if (locationName == LocationType.Casino)
+            {
+                LowAmount = -500;
+                HighAmount = 200;
+            }
         }
         #endregion
 

@@ -14,6 +14,9 @@ namespace cSharpGold
         #endregion
 
         #region Constructor
+        /// <summary>
+        /// Constructor sets the first user to 1
+        /// </summary>
         public User()
         {
             
