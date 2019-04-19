@@ -36,7 +36,7 @@ namespace cSharpGold
 
         #region Methods
         /// <summary>
-        /// Calculations for the amount of Gold to be given / taken away
+        /// Randomly calculates for the amount of Gold to be given / taken away
         /// </summary>
         public int GoldAmount()
         {
@@ -57,6 +57,10 @@ namespace cSharpGold
             return Gold;
         }
 
+        /// <summary>
+        /// Method to assign High and Low amounts for each specific Location
+        /// </summary>
+        /// <param name="locationName">Takes in a Location from the Enum</param>
         public void HighLow(LocationType locationName)
         {
             if (locationName == LocationType.Cave)

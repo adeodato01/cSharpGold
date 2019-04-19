@@ -9,7 +9,9 @@ namespace cSharpGold
     /// </summary>
     static class Game
     {
-
+        /// <summary>
+        /// A collection that contains all the Locations created
+        /// </summary>
         private static List<Location> locations = new List<Location>();
 
         private static int goldTotal = 0;
@@ -18,7 +20,7 @@ namespace cSharpGold
         /// Method that creates locations
         /// </summary>
         /// <param name="locationName">Location name</param>
-        /// <returns></returns>
+        /// <returns>Returns an individual location with Random Gold amount</returns>
         public static Location CreateLocation(LocationType locationName)
         {
             var location = new Location
@@ -39,6 +41,10 @@ namespace cSharpGold
             return location;
         }
 
+        /// <summary>
+        /// A method that interates through a list of Locations
+        /// </summary>
+        /// <returns>a list of Locations that can be iterated through</returns>
         public static IEnumerable<Location> GetAllLocationsForUser()
         {
             return locations;
