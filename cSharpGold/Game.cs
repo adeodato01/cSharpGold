@@ -9,10 +9,7 @@ namespace cSharpGold
     /// </summary>
     static class Game
     {
-        /// <summary>
-        /// A collection that contains all the Locations created
-        /// </summary>
-        private static List<Location> locations = new List<Location>();
+        private static GameContext db = new GameContext();
 
         private static int goldTotal = 0;
 
@@ -36,7 +33,8 @@ namespace cSharpGold
             //Console.WriteLine($"the LOW amount is now {location.LowAmount}");
             //Console.WriteLine($"the HIGH amount is now {location.HighAmount}");
 
-            locations.Add(location);
+            db.Locations.Add(location);
+            db.SaveChanges();
 
             return location;
         }
@@ -47,7 +45,7 @@ namespace cSharpGold
         /// <returns>a list of Locations that can be iterated through</returns>
         public static IEnumerable<Location> GetAllLocationsForUser()
         {
-            return locations;
+            return db.Locations;
         }
 
         public static User CreateUser()
