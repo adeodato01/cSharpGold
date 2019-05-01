@@ -21,6 +21,10 @@ namespace cSharpGold
     {
         #region Properties
         /// <summary>
+        /// Unique number for the location
+        /// </summary>
+        public int LocationNumber { get; private set; }
+        /// <summary>
         /// Name of the Location
         /// </summary>
         public LocationType LocationName { get; set; }
