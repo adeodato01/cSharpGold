@@ -14,7 +14,7 @@ namespace cSharpGold
                 */
 
             Console.WriteLine("********************");
-            Console.WriteLine("Welcome to by game!");
+            Console.WriteLine("Welcome to c# Gold!");
             Console.WriteLine("********************");
 
             while (true)
